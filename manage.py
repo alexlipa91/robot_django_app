@@ -3,6 +3,7 @@
 import os
 import sys
 
+#this is the main function that will run the administrative tasks for our project
 
 def main():
     """Run administrative tasks."""

@@ -10,6 +10,9 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
+#this will where all the settings for our project will be stored, such as database 
+#configuration, static file paths, and more
+
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -28,8 +31,8 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 
-# Application definition
-
+# apps are the components of the project, and each app is a separate module that
+# can be reused in other projects. This is the list of all the apps that are
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -39,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'first_app'
 ]
+STATIC_URL = '/static/'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block content %}
+    <title>home</title>
+    <h1>Actions</h1>
+
+    <form action="{% url 'start' %}" method="post">
+        <button type="button" id="startBtn">Start</button>
+    </form>
+
+    <form action="{% url 'camera' %}" method="post">
+        <button type="button" id="cameraBtn">Camera</button>
+    </form>
+
+    <form action="{% url 'sound' %}" method="post">
+        <button type="button" id="soundBtn">Sound</button>
+    </form>
+
+    <form action="{% url 'shutdown' %}" method="post">
+        <button type="button" id="shutdownBtn">Shutdown</button>
+    </form>
+
+    <script>
+        var buttons = ["startBtn", "cameraBtn", "soundBtn", "shutdownBtn"];
+
+        buttons.forEach(function (btnId) {
+            document.getElementById(btnId).addEventListener("click", function () {
+                // Use Ajax to send a request to the server when the button is clicked
+                var xhr = new XMLHttpRequest();
+                xhr.open("POST", document.getElementById(btnId).parentNode.action, true);
+                xhr.setRequestHeader("X-CSRFToken", "{{ csrf_token }}"); // Add CSRF token
+                xhr.send();
+            });
+        });
+    </script>
+{% endblock %}
