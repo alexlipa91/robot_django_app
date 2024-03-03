@@ -1,7 +1,17 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block content %}
     <title>home</title>
     <h1>Actions</h1>
+    
+    <style>
+        .pixelrobot {
+            float: right;
+            width: 50%;
+            
+          }
+    </style>
+    <img class = "pixelrobot" src="{% static 'rbot.png' %}">
 
     <form action="{% url 'start' %}" method="post">
         <button type="button" id="startBtn">Start</button>
@@ -18,6 +28,8 @@
     <form action="{% url 'shutdown' %}" method="post">
         <button type="button" id="shutdownBtn">Shutdown</button>
     </form>
+
+    
 
     <script>
         var buttons = ["startBtn", "cameraBtn", "soundBtn", "shutdownBtn"];
