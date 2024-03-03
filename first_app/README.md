@@ -1,4 +1,4 @@
-# python_robotcontroller
+# python_ robotcontroller
 PyGameRobotControl is a project that combines the power of Pygame, a popular Python library for game development, with real-life robot control. The project allows users to control a 2D character within a Pygame environment, and these movements are translated into real-world actions by a connected robot.
 
 ![Alt Text](https://github.com/Uglypr1nces/python_robotcontroller/raw/main/2playergame/content/71nVosF8GAL._AC_SX679_.jpg)
